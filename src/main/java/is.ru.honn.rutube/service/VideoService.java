@@ -1,5 +1,9 @@
 package is.ru.honn.rutube.service;
 
+import is.ru.honn.rutube.domain.Video;
+
+import java.util.List;
+
 /**
  * Created by Snojo on 30/09/16.
  */
