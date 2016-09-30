@@ -33,4 +33,9 @@ public class TestUserService {
         calculator.calculateSalary(basePay, hours);
         assertEquals("Base pay can't be lower than the minimum wage (500)", outContent.toString());*/
     }
+
+    @Test
+    public void TestAddUser() throws Exception{
+
+    }
 }
