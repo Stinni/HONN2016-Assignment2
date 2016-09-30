@@ -1,12 +1,18 @@
+package is.ru.honn.rutube.test;
+
+/**
+ * Created by Snojo on 30/09/16.
+ */
 // TODO: move to right folder when service layer is ready!
 
-package is.ru.honn.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
 
-import org.junit.*;
-import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import static org.junit.Assert.*;
-import org.junit.contrib.java.lang.system.ExpectedSystemExit;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Hönnun og Smíði Hugbúnaðar - Assignment 1, Part 1:
