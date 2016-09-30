@@ -1,6 +1,6 @@
 // TODO: move to right folder when service layer is ready!
 
-package is.ru.honn.rutube.service;
+package is.ru.honn.rutube.test;
 
 import org.junit.*;
 import java.io.ByteArrayOutputStream;
