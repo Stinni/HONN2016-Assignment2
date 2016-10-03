@@ -12,7 +12,7 @@ public class User {
     protected String email;
     protected String displayName;
     protected String birthDate;
-    protected List<Video> videos;
+    protected List<Video> videos = null;
 
     public User() {}
     public User(int userId, String firstName, String lastName, String email, String displayName, String birthDate) {
@@ -22,7 +22,6 @@ public class User {
         this.email = email;
         this.displayName = displayName;
         this.birthDate = birthDate;
-        this.videos = null;
     }
 
     public int getUserId() {
