@@ -25,8 +25,11 @@
         <module name="HONN2016-Assignment2" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="HONN2016-Assignment2" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="HONN2016-Assignment2" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-source 8" />
   </component>
 </project>
