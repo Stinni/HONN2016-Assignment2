@@ -5,7 +5,6 @@ package is.ru.honn.rutube.reader;
         import org.json.simple.JSONArray;
         import org.json.simple.JSONObject;
         import org.json.simple.JSONValue;
-        import java.util.Date;
 
         import java.util.ArrayList;
         import java.util.List;
