@@ -22,6 +22,7 @@ public class User {
         this.email = email;
         this.displayName = displayName;
         this.birthDate = birthDate;
+        this.videos = null;
     }
 
     public int getUserId() {
