@@ -33,8 +33,9 @@ public class VideoServiceStub implements VideoService {
             }
         }
 
-        u.getVideos().add(video);
-        videos.add(video);
+        List<Video> vids = u.getVideos();
+        vids.add(video);
+        u.setVideos(vids);
         return videoId;
     }
 
@@ -45,11 +46,14 @@ public class VideoServiceStub implements VideoService {
 
     public Video getVideo(int videoId)
     {
-        for(Video v : videos) {
-            if(v.getVideoId() == videoId) {
-                return v;
+        if(videos != null) {
+            for(Video v : videos) {
+                if(v.getVideoId() == videoId) {
+                    return v;
+                }
             }
         }
+
         return null;
     }
 }
