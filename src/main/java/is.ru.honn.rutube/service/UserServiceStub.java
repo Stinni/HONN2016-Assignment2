@@ -12,21 +12,21 @@ import java.util.List;
  */
 
 public class UserServiceStub implements UserService {
-    public List<User> users = new ArrayList<User>();
+    public List<User> users = new ArrayList<>();
 
     public int addUser(User user) throws ServiceException
     {
         User u = new User();
 
         users.add(u);
-        return u.userId;
+        return u.getUserId();
     }
 
     public User getUser(int userId)
     {
 
         for( User s : users){
-            if(s.userId == userId){
+            if(s.getUserId() == userId){
                 return s;
             }
         }

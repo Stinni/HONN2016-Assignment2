@@ -33,14 +33,14 @@ public class VideoServiceStub implements VideoService {
             }
         }
 
-        u.videos.add(video);
+        u.getVideos().add(video);
         videos.add(video);
         return video.getVideoId();
     }
 
     public List<Video> getVideosbyUser(int userId)
     {
-        return _uService.getUser(userId).videos;
+        return _uService.getUser(userId).getVideos();
     }
 
     public Video getVideo(int videoId)
