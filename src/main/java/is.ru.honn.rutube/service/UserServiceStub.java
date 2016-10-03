@@ -12,30 +12,34 @@ import java.util.List;
  */
 
 public class UserServiceStub implements UserService {
+
     public List<User> users = new ArrayList<>();
 
     public int addUser(User user) throws ServiceException
     {
-        User u = new User();
+        int uId = user.getUserId();
+        for(User u : users) {
+            if(u.getUserId() == uId) {
+                throw new ServiceException("User already exists.");
+            }
+        }
 
-        users.add(u);
-        return u.getUserId();
+        users.add(user);
+        return uId;
     }
 
     public User getUser(int userId)
     {
-
-        for( User s : users){
+        for(User s : users){
             if(s.getUserId() == userId){
                 return s;
             }
         }
         return null;
-
     }
 
     public List<User> getUsers()
     {
-        return null;
+        return users;
     }
 }
