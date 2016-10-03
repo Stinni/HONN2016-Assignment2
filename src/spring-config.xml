@@ -13,7 +13,11 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
         <property name="lastName">
             <value>The Master</value>
         </property>
+        <property name="displayName">
+            <value>Lordnsaviour</value>
+        </property>
+        <property name="birthDate">
+            <value>First second of the first day</value>
+        </property>
     </bean>
-
-
 </beans>
