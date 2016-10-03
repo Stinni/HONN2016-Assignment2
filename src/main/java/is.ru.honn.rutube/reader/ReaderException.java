@@ -1,7 +1,20 @@
 package is.ru.honn.rutube.reader;
 
-/**
- * Created by Snojo on 03/10/16.
- */
-public class ReaderException {
+public class ReaderException extends Exception
+{
+    public ReaderException()
+    {
+        super();
+    }
+
+    public ReaderException(String message)
+    {
+        super(message);
+    }
+
+    public ReaderException(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
 }
+

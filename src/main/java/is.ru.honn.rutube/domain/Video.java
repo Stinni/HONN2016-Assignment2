@@ -26,4 +26,8 @@ public class Video {
     public int getVideoId() {
         return videoId;
     }
+
+    public void addTag(String tag){
+        tags.add(tag);
+    }
 }
