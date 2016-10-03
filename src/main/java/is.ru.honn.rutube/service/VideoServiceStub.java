@@ -1,6 +1,7 @@
 package is.ru.honn.rutube.service;
 
 import is.ru.honn.rutube.domain.ServiceException;
+import is.ru.honn.rutube.domain.User;
 import is.ru.honn.rutube.domain.Video;
 import java.util.*;
 
@@ -9,34 +10,46 @@ import java.util.*;
  */
 public class VideoServiceStub implements VideoService {
 
-    private ArrayList<Video> videos;
+    private UserServiceStub _uService;
+    private List<Video> videos;
 
-    public VideoServiceStub()
+    public VideoServiceStub(UserServiceStub u)
     {
+        _uService = u;
         videos = new ArrayList<Video>();
     }
 
     public int addVideo(Video video, int userId) throws ServiceException
     {
+        User u = _uService.getUser(userId);
+        if(u == null) {
+            throw new ServiceException("User doesn't exist.");
+        }
+
+        int videoId = video.getVideoId();
         for (Video v : videos) {
-            if(v.getVideoId() == video.getVideoId()) {
-                throw new ServiceException();
+            if(v.getVideoId() == videoId) {
+                throw new ServiceException("Video already exists.");
             }
         }
 
-        // here we presume that it's been checked that the user exists
-        // TODO: check if we need to add a pointer to the user service stub
+        u.videos.add(video);
         videos.add(video);
-        return 0;
+        return video.getVideoId();
     }
 
     public List<Video> getVideosbyUser(int userId)
     {
-        return null;
+        return _uService.getUser(userId).videos;
     }
 
     public Video getVideo(int videoId)
     {
+        for(Video v : videos) {
+            if(v.getVideoId() == videoId) {
+                return v;
+            }
+        }
         return null;
     }
 }
