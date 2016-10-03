@@ -7,11 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.core.io.Resource;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertTrue;
@@ -28,7 +23,6 @@ public class TestUserService extends TestCase {
         _uService = new UserServiceStub();
         User u = (User)resource.getBean("user");
         _uService.addUser(u);
-        System.out.println(u.getFirstName());
     }
 
     @Test
@@ -39,7 +33,6 @@ public class TestUserService extends TestCase {
     @Test
     public void testGetUser() throws Exception {
         User u = _uService.getUser(12345);
-        System.out.println(u.getLastName());
         //assertEquals("Snorri", u);
         assertTrue(true);
     }

@@ -22,4 +22,51 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
             <value>First second of the first day</value>
         </property>
     </bean>
+
+    <bean id="video1" class="is.ru.honn.rutube.domain.Video">
+        <property name="videoId">
+            <value>2222</value>
+        </property>
+        <property name="title">
+            <value>TwoTwoTwoTwo</value>
+        </property>
+        <property name="description">
+            <value>Some description</value>
+        </property>
+        <property name="src">
+            <value>url</value>
+        </property>
+        <property name="type">
+            <value>music</value>
+        </property>
+        <property name="tags">
+            <list>
+                <value>woohoo</value>
+                <value>woowoo</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="video2" class="is.ru.honn.rutube.domain.Video">
+        <property name="videoId">
+            <value>3333</value>
+        </property>
+        <property name="title">
+            <value>ThreeThreeThreeThree</value>
+        </property>
+        <property name="description">
+            <value>Some description</value>
+        </property>
+        <property name="src">
+            <value>url</value>
+        </property>
+        <property name="type">
+            <value>music</value>
+        </property>
+        <property name="tags">
+            <list>
+                <value>threeeeee</value>
+            </list>
+        </property>
+    </bean>
 </beans>

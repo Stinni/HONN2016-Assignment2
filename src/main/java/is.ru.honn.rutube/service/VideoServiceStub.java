@@ -27,14 +27,21 @@ public class VideoServiceStub implements VideoService {
         }
 
         int videoId = video.getVideoId();
-        for (Video v : videos) {
-            if(v.getVideoId() == videoId) {
-                throw new ServiceException("Video already exists.");
+        if(videos != null) {
+            for (Video v : videos) {
+                if(v.getVideoId() == videoId) {
+                    throw new ServiceException("Video already exists.");
+                }
             }
         }
 
         List<Video> vids = u.getVideos();
+        if(vids == null) {
+            vids = new ArrayList<>();
+        }
+
         vids.add(video);
+        videos.add(video);
         u.setVideos(vids);
         return videoId;
     }
