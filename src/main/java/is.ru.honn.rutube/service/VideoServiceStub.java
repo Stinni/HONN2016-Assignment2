@@ -16,7 +16,7 @@ public class VideoServiceStub implements VideoService {
     public VideoServiceStub(UserServiceStub u)
     {
         _uService = u;
-        videos = new ArrayList<Video>();
+        videos = new ArrayList<>();
     }
 
     public int addVideo(Video video, int userId) throws ServiceException
@@ -35,7 +35,7 @@ public class VideoServiceStub implements VideoService {
 
         u.getVideos().add(video);
         videos.add(video);
-        return video.getVideoId();
+        return videoId;
     }
 
     public List<Video> getVideosbyUser(int userId)
