@@ -30,6 +30,8 @@ public class UserServiceStub implements UserService {
                 return s;
             }
         }
+        return null;
+
     }
 
     public List<User> getUsers()
