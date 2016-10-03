@@ -1,5 +1,6 @@
 package is.ru.honn.rutube.service;
 
+import is.ru.honn.rutube.domain.ServiceException;
 import is.ru.honn.rutube.domain.User;
 import is.ru.honn.rutube.domain.Video;
 import org.junit.Before;
@@ -11,9 +12,10 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
- * Created by krihf on 3.10.2016.
+ * Created by Kristinn Heiðar Freysteinsson & Snorri on 3.10.2016.
  */
 public class TestVideoService {
 
@@ -45,12 +47,43 @@ Test if adding and getting videos works right
     }
 
     @Test
-    public void testGetUser() throws Exception {
+    public void testAddVideoUserNull() throws Exception {
+        Video v2 = (Video)resource.getBean("video2");
+        try {
+            _vService.addVideo(v2, 99999);
+        } catch(ServiceException e) {
+            assertEquals("User doesn't exist.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void testAddVideoDoubleAndFails() throws Exception {
+        Video v = (Video)resource.getBean("video1");
+        try {
+            _vService.addVideo(v, 12345);
+        } catch(ServiceException e) {
+            assertEquals("Video already exists.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void testGetVideosByUser() throws Exception {
 
     }
 
     @Test
-    public void testGetUsers() throws Exception {
+    public void testGetVideosByNonExistentUser() throws Exception {
 
+    }
+
+    @Test
+    public void testGetVideo() throws Exception {
+
+    }
+
+    @Test
+    public void testGetNonExistentVideo() throws Exception {
+        //Video v = _vService.getVideo();
+        //assertNull();
     }
 }

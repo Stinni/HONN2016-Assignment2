@@ -46,7 +46,7 @@ public class VideoServiceStub implements VideoService {
         return videoId;
     }
 
-    public List<Video> getVideosbyUser(int userId)
+    public List<Video> getVideosByUser(int userId)
     {
         return _uService.getUser(userId).getVideos();
     }
