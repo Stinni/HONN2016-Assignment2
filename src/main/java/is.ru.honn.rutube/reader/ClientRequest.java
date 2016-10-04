@@ -10,9 +10,7 @@ import java.io.IOException;
 
 public class ClientRequest
 {
-    public ClientRequest()
-    {
-    }
+    public ClientRequest() {}
 
     public String getRequest(String url)
     {
@@ -52,5 +50,4 @@ public class ClientRequest
         }
         return content.toString();
     }
-
 }

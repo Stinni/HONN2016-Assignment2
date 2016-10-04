@@ -20,7 +20,7 @@ import java.util.concurrent.ExecutionException;
  */
 public class TestVideoService {
 
-    ApplicationContext resource = new FileSystemXmlApplicationContext("/src/spring-config.xml");
+    ApplicationContext resource = new FileSystemXmlApplicationContext("/src/test/resources/spring-config.xml");
     private UserServiceStub _uService;
     private VideoServiceStub _vService;
 

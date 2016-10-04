@@ -19,7 +19,7 @@ public class TestUserService extends TestCase {
 
     @Before
     public void setUp() throws Exception {
-        ApplicationContext resource = new FileSystemXmlApplicationContext("/src/spring-config.xml");
+        ApplicationContext resource = new FileSystemXmlApplicationContext("/src/test/resources/spring-config.xml");
         _uService = new UserServiceStub();
         User u = (User)resource.getBean("user");
         _uService.addUser(u);

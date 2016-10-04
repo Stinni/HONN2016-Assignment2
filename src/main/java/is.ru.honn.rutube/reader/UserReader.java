@@ -9,7 +9,7 @@ import org.json.simple.JSONValue;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserReader {
+public class UserReader extends AbstractReader {
 
     private VideoReader videoReader;
 
@@ -82,7 +82,6 @@ public class UserReader {
         ClientRequest clientRequest = new ClientRequest();
         String content = clientRequest.getRequest("http://mockaroo.com/f13b8200/download?count=1&key=e79a3650");
         List<User> users = (List<User>)userReader.parse(content);
-
+        System.out.println(users.get(0).getFirstName());
     }
-
 }
