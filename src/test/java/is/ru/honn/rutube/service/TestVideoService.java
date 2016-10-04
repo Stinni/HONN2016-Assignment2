@@ -3,6 +3,7 @@ package is.ru.honn.rutube.service;
 import is.ru.honn.rutube.domain.ServiceException;
 import is.ru.honn.rutube.domain.User;
 import is.ru.honn.rutube.domain.Video;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -19,12 +20,6 @@ import java.util.concurrent.ExecutionException;
  */
 public class TestVideoService {
 
-/*
-Test if adding and getting videos works right
-●	Add video, userId, title and src
-●	Add video that fails
-●	Check if getting videos that do not exist works correctly
-*/
     ApplicationContext resource = new FileSystemXmlApplicationContext("/src/spring-config.xml");
     private UserServiceStub _uService;
     private VideoServiceStub _vService;
@@ -68,22 +63,26 @@ Test if adding and getting videos works right
 
     @Test
     public void testGetVideosByUser() throws Exception {
-
+        List<Video> vids = _vService.getVideosByUser(12345);
+        assertEquals(1, vids.size());
+        assertEquals("TwoTwoTwoTwo", vids.get(0).getTitle());
     }
 
     @Test
     public void testGetVideosByNonExistentUser() throws Exception {
-
+        List<Video> vids = _vService.getVideosByUser(99999);
+        assertNull(vids);
     }
 
     @Test
     public void testGetVideo() throws Exception {
-
+        Video v = _vService.getVideo(2222);
+        assertEquals("TwoTwoTwoTwo", v.getTitle());
     }
 
     @Test
     public void testGetNonExistentVideo() throws Exception {
-        //Video v = _vService.getVideo();
-        //assertNull();
+        Video v = _vService.getVideo(9999);
+        assertNull(v);
     }
 }

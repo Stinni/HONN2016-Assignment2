@@ -1,12 +1,12 @@
 package is.ru.honn.rutube.reader;
 
-        import javax.ws.rs.client.Client;
-        import javax.ws.rs.client.ClientBuilder;
-        import javax.ws.rs.core.Response;
-        import java.io.BufferedReader;
-        import java.io.FileNotFoundException;
-        import java.io.FileReader;
-        import java.io.IOException;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.core.Response;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class ClientRequest
 {

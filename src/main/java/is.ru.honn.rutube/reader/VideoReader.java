@@ -1,12 +1,12 @@
 package is.ru.honn.rutube.reader;
 
-        import is.ru.honn.rutube.domain.Video;
-        import org.json.simple.JSONArray;
-        import org.json.simple.JSONObject;
-        import org.json.simple.JSONValue;
+import is.ru.honn.rutube.domain.Video;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 
-        import java.util.ArrayList;
-        import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VideoReader {
 

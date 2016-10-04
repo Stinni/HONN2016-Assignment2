@@ -35,20 +35,24 @@ public class VideoServiceStub implements VideoService {
             }
         }
 
-        List<Video> vids = u.getVideos();
-        if(vids == null) {
-            vids = new ArrayList<>();
+        List<Video> userVideos = u.getVideos();
+        if(userVideos == null) {
+            userVideos = new ArrayList<>();
         }
 
-        vids.add(video);
+        userVideos.add(video);
         videos.add(video);
-        u.setVideos(vids);
+        u.setVideos(userVideos);
         return videoId;
     }
 
     public List<Video> getVideosByUser(int userId)
     {
-        return _uService.getUser(userId).getVideos();
+        User u = _uService.getUser(userId);
+        if(u == null) {
+            return null;
+        }
+        return u.getVideos();
     }
 
     public Video getVideo(int videoId)
