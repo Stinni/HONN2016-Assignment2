@@ -10,7 +10,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 
 public class ReaderFactory {
-    ApplicationContext resource = new FileSystemXmlApplicationContext("/src/main/java/resources/readers.xml");
+    ApplicationContext resource = new FileSystemXmlApplicationContext("/src/main/java/is.ru.honn.rutube/resources/readers.xml");
     //Create beans to make readers.
     public Reader getReader(String id){
         Reader r = (Reader)resource.getBean(id);

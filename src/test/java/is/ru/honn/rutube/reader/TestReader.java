@@ -16,11 +16,9 @@ import org.junit.Before;
  */
 public class TestReader {
 
-    private ReadHandlerStub readHandler;
-
     @Before
     public void setUp() throws Exception {
-        readHandler = new ReadHandlerStub();
+
     }
 
     /*

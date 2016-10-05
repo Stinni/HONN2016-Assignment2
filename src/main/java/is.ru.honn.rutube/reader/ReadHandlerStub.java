@@ -5,23 +5,30 @@ package is.ru.honn.rutube.reader;
  */
 public class ReadHandlerStub implements ReadHandler {
 
+    ReaderFactory factory;
+    Reader reader;
+
     public ReadHandlerStub() {
-        ReaderFactory factory = new ReaderFactory();
-        Reader reader = factory.getReader("userReader"); // breytt 05.10.2016
-
+        factory = new ReaderFactory();
+        reader = factory.getReader("userReader");
         reader.setReadHandler(this);
-        reader.read();
-    }
-
-    public static void main(String args[]){
-
     }
 
     @Override
     public void read(int count, Object object) {
         //Reader kallar á þetta til að skila gögnum
         //Prenta gögn(liður 3)
+        System.out.println(reader.read());
+    }
 
+    public void read() {
+        //Reader kallar á þetta til að skila gögnum
+        //Prenta gögn(liður 3)
+        System.out.println(reader.read());
+    }
 
+    public static void main(String args[]){
+        ReadHandlerStub s = new ReadHandlerStub();
+        s.read();
     }
 }
