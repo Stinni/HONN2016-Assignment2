@@ -19,7 +19,6 @@ public class UserReader extends AbstractReader {
 
 
     /**
-     *
      * Walks through the json String and maps it to lists of users, which all contain 1 or more videos.
      *
      * @param content Json string with list of users, see http://mockaroo.com/f13b8200/download?count=1&key=e79a3650

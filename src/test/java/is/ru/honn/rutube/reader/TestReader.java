@@ -1,5 +1,11 @@
 package is.ru.honn.rutube.reader;
 
+import is.ru.honn.rutube.domain.User;
+import is.ru.honn.rutube.domain.Video;
+import is.ru.honn.rutube.service.UserServiceStub;
+import is.ru.honn.rutube.service.VideoServiceStub;
+import org.junit.Before;
+
 /**
  * Hönnun og Smíði Hugbúnaðar - Assignment 2, Part 1:
  * Unit test class TestReader (TestReader.java)
@@ -12,7 +18,11 @@ public class TestReader {
 
     private ReadHandlerStub readHandler;
 
-    
+    @Before
+    public void setUp() throws Exception {
+        readHandler = new ReadHandlerStub();
+    }
+
     /*
     Test the reader
     ●	Factory reads the reader.xml correctly
