@@ -79,9 +79,7 @@ public class UserReader extends AbstractReader {
 
         VideoReader videoReader = new VideoReader();
         UserReader userReader = new UserReader(videoReader);
-        ClientRequest clientRequest = new ClientRequest();
-        String content = clientRequest.getRequest("http://mockaroo.com/f13b8200/download?count=1&key=e79a3650");
-        List<User> users = (List<User>)userReader.parse(content);
+        List<User> users = (List<User>)userReader.parse((String)userReader.read());
         System.out.println(users.get(0).getFirstName());
     }
 }
