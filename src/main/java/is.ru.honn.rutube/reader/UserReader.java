@@ -79,7 +79,7 @@ public class UserReader extends AbstractReader {
 
         VideoReader videoReader = new VideoReader();
         UserReader userReader = new UserReader(videoReader);
-        List<User> users = (List<User>)userReader.parse((String)userReader.read());
+        List<User> users = (List<User>)userReader.read();
         System.out.println(users.get(0).getFirstName());
     }
 }

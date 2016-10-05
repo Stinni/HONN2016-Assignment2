@@ -12,11 +12,8 @@ public abstract class AbstractReader implements Reader {
     }
 
     public Object read() {
-        return clientRequest.getRequest("http://mockaroo.com/f13b8200/download?count=1&key=e79a3650");
+        return parse(clientRequest.getRequest("http://mockaroo.com/f13b8200/download?count=1&key=e79a3650"));
     }
-
-    //public abstract Object parse(String content);
-
 
     public void setURI(String URI) {
 

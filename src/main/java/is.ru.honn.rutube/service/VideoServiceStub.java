@@ -11,38 +11,41 @@ import java.util.*;
 public class VideoServiceStub implements VideoService {
 
     private UserServiceStub _uService;
-    private List<Video> videos;
 
     public VideoServiceStub(UserServiceStub u)
     {
         _uService = u;
-        videos = new ArrayList<>();
     }
 
     public int addVideo(Video video, int userId) throws ServiceException
     {
-        User u = _uService.getUser(userId);
-        if(u == null) {
+        User theUser = _uService.getUser(userId);
+        if(theUser == null) {
             throw new ServiceException("User doesn't exist.");
         }
 
         int videoId = video.getVideoId();
-        if(videos != null) {
-            for (Video v : videos) {
-                if(v.getVideoId() == videoId) {
-                    throw new ServiceException("Video already exists.");
+        List<User> userlist = _uService.getUsers();
+        if(userlist != null) {
+            for (User u : userlist) {
+                List<Video> videoList = u.getVideos();
+                if (videoList != null) {
+                    for (Video v : videoList) {
+                        if (v.getVideoId() == videoId) {
+                            throw new ServiceException("Video already exists.");
+                        }
+                    }
                 }
             }
         }
 
-        List<Video> userVideos = u.getVideos();
+        List<Video> userVideos = theUser.getVideos();
         if(userVideos == null) {
             userVideos = new ArrayList<>();
         }
 
         userVideos.add(video);
-        videos.add(video);
-        u.setVideos(userVideos);
+        theUser.setVideos(userVideos);
         return videoId;
     }
 
@@ -57,10 +60,16 @@ public class VideoServiceStub implements VideoService {
 
     public Video getVideo(int videoId)
     {
-        if(videos != null) {
-            for(Video v : videos) {
-                if(v.getVideoId() == videoId) {
-                    return v;
+        List<User> userList = _uService.getUsers();
+        if(userList != null) {
+            for(User u: userList) {
+                List<Video> videoList = u.getVideos();
+                if(videoList != null) {
+                    for(Video v : videoList) {
+                        if(v.getVideoId() == videoId) {
+                            return v;
+                        }
+                    }
                 }
             }
         }
