@@ -1,5 +1,8 @@
 package is.ru.honn.rutube.reader;
 
+/**
+ *
+ */
 public class ReaderException extends Exception
 {
     public ReaderException()
