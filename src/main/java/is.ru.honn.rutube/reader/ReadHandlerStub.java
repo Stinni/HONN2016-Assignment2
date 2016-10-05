@@ -22,6 +22,6 @@ public class ReadHandlerStub implements ReadHandler {
         //Reader kallar á þetta til að skila gögnum
         //Prenta gögn(liður 3)
 
-        
+
     }
 }
