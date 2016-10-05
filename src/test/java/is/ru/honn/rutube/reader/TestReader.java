@@ -8,11 +8,11 @@ package is.ru.honn.rutube.reader;
  * @author Kristinn Heiðar Freysteinsson & Snorri Hjörvar Jóhannsson
  * @version 1, 4.10.16
  */
-public class TestReader implements ReadHandler {
+public class TestReader {
 
-    public void read(int count, Object object) {
+    private ReadHandlerStub readHandler;
 
-    }
+    
     /*
     Test the reader
     ●	Factory reads the readers.xml correctly
