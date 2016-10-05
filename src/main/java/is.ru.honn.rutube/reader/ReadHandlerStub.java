@@ -7,7 +7,7 @@ public class ReadHandlerStub implements ReadHandler {
 
     public ReadHandlerStub() {
         ReaderFactory factory = new ReaderFactory();
-        Reader reader = factory.getReader("videoReaderuserReader"); // breytt 05.10.2016
+        Reader reader = factory.getReader("userReader"); // breytt 05.10.2016
 
         reader.setReadHandler(this);
         reader.read();

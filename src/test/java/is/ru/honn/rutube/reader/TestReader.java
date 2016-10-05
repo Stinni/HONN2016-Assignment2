@@ -25,7 +25,7 @@ public class TestReader {
 
     /*
     Test the reader
-    ●	Factory reads the reader.xml correctly
+    ●	Factory reads the readers.xml correctly
     ●	Exception if URI is wrong
     ●	Exception if handler is not set
     ●	Check the number of lines read matches with file
