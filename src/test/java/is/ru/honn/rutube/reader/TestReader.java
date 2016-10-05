@@ -1,9 +1,18 @@
 package is.ru.honn.rutube.reader;
 
 /**
- * Created by krihf on 4.10.2016.
+ * Hönnun og Smíði Hugbúnaðar - Assignment 2, Part 1:
+ * Unit test class TestReader (TestReader.java)
+ * for the Reader package
+ *
+ * @author Kristinn Heiðar Freysteinsson & Snorri Hjörvar Jóhannsson
+ * @version 1, 4.10.16
  */
-public class TestReader {
+public class TestReader implements ReadHandler {
+
+    public void read(int count, Object object) {
+
+    }
     /*
     Test the reader
     ●	Factory reads the reader.xml correctly
