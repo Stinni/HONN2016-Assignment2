@@ -23,6 +23,24 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
         </property>
     </bean>
 
+    <bean id="user2" class="is.ru.honn.rutube.domain.User">
+        <property name="userId">
+            <value>54321</value>
+        </property>
+        <property name="firstName">
+            <value>Irrons</value>
+        </property>
+        <property name="lastName">
+            <value>retsaM ehT</value>
+        </property>
+        <property name="displayName">
+            <value>ruoivasndroL</value>
+        </property>
+        <property name="birthDate">
+            <value>Last second of the last day</value>
+        </property>
+    </bean>
+
     <bean id="video1" class="is.ru.honn.rutube.domain.Video">
         <property name="videoId">
             <value>2222</value>
