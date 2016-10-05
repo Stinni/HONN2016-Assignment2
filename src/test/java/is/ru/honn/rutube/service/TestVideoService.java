@@ -16,7 +16,12 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Created by Kristinn Heiðar Freysteinsson & Snorri on 3.10.2016.
+ * Hönnun og Smíði Hugbúnaðar - Assignment 2, Part 1:
+ * Unit test class TestVideoService (TestVideoService.java)
+ * for the UserService (VideoService.java) class
+ *
+ * @author Kristinn Heiðar Freysteinsson & Snorri Hjörvar Jóhannsson
+ * @version 1, 3.10.2016.
  */
 public class TestVideoService {
 
