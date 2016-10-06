@@ -1,10 +1,11 @@
 package is.ru.honn.rutube.reader;
 
-import is.ru.honn.rutube.domain.User;
-import is.ru.honn.rutube.domain.Video;
-import is.ru.honn.rutube.service.UserServiceStub;
-import is.ru.honn.rutube.service.VideoServiceStub;
+import junit.framework.TestCase;
+import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * Hönnun og Smíði Hugbúnaðar - Assignment 2, Part 1:
@@ -14,11 +15,27 @@ import org.junit.Before;
  * @author Kristinn Heiðar Freysteinsson & Snorri Hjörvar Jóhannsson
  * @version 1, 4.10.16
  */
-public class TestReader {
+public class TestReader implements ReadHandler {
+
+    private ReaderFactory factory;
+    private Reader reader;
 
     @Before
     public void setUp() throws Exception {
+        factory = new ReaderFactory();
+        //reader.setReadHandler(this);
+    }
 
+    @Override
+    public void handleObject(int count, Object object) {
+
+    }
+
+    @Test
+    public void testFactory() {
+        reader = factory.getReader("userReader");
+        Object obj = reader.read();
+        //assertEquals();
     }
 
     /*

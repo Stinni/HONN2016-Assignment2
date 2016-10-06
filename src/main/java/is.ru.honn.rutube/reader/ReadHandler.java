@@ -5,5 +5,5 @@ package is.ru.honn.rutube.reader;
  */
 public interface ReadHandler
 {
-    void read(int count, Object object);
+    void handleObject(int count, Object object);
 }

@@ -5,8 +5,8 @@ package is.ru.honn.rutube.reader;
  */
 public class ReadHandlerStub implements ReadHandler {
 
-    ReaderFactory factory;
-    Reader reader;
+    private ReaderFactory factory;
+    private Reader reader;
 
     public ReadHandlerStub() {
         factory = new ReaderFactory();
@@ -15,7 +15,7 @@ public class ReadHandlerStub implements ReadHandler {
     }
 
     @Override
-    public void read(int count, Object object) {
+    public void handleObject(int count, Object object) {
         //Reader kallar á þetta til að skila gögnum
         //Prenta gögn(liður 3)
         System.out.println(reader.read());
